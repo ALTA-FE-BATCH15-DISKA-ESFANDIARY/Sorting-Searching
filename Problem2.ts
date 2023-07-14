@@ -34,12 +34,13 @@ interface Employee {
     { id: 742, nama: "Fani" },
   ];
   
-  const targetId = 100;
+//   const targetId = 100;
+  const targetId = 305;
   const result = binarySearch(dataKaryawan, targetId);
   
   if (result) {
     console.log("Karyawan ditemukan:", result);
   } else {
-    console.log(null);
+    console.log(result);
   }
   
