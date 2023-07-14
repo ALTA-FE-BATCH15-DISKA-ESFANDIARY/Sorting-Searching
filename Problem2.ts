@@ -1,9 +1,4 @@
-interface Employee {
-    id: number;
-    nama: string;
-  }
-  
-  function binarySearch(employees: Employee[], targetId: number): Employee | null {
+function binarySearch(employees: { id: number; nama: string; }[], targetId: number): { id: number; nama: string; } | null {
     let first = 0;
     let last = employees.length - 1;
   
@@ -17,11 +12,10 @@ interface Employee {
         last = middle - 1;
       }
     }
-  
     return null;
   }
   
-  const dataKaryawan: Employee[] = [
+  const dataKaryawan = [
     { id: 101, nama: "Rani" },
     { id: 203, nama: "Andi" },
     { id: 305, nama: "Budi" },
