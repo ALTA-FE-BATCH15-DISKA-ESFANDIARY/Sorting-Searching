@@ -4,20 +4,17 @@ interface Employee {
   }
   
   function binarySearch(employees: Employee[], targetId: number): Employee | null {
-    let left = 0;
-    let right = employees.length - 1;
+    let first = 0;
+    let last = employees.length - 1;
   
-    while (left <= right) {
-      const middle = Math.floor((left + right) / 2);
-  
+    while (first <= last) {
+      let middle = Math.floor((first + last) / 2);
       if (employees[middle].id === targetId) {
         return employees[middle];
-      }
-  
-      if (employees[middle].id < targetId) {
-        left = middle + 1;
+      } else if (employees[middle].id < targetId) {
+        first = middle + 1;
       } else {
-        right = middle - 1;
+        last = middle - 1;
       }
     }
   
@@ -34,7 +31,6 @@ interface Employee {
     { id: 742, nama: "Fani" },
   ];
   
-//   const targetId = 100;
   const targetId = 305;
   const result = binarySearch(dataKaryawan, targetId);
   
